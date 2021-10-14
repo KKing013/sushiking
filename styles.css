@@ -1,0 +1,45 @@
+@media(min-width: 1200px) {
+  .navbar .navbar-nav .nav-link:hover {
+    border-bottom: 1px solid white;
+  }
+}
+
+
+@media(max-width: 1200px) {
+  .navbar .navbar-nav .nav-link:hover {
+    color: white;
+  }
+  
+ 
+}
+
+#main{ 
+  height: 90vh;
+  width: 100%;
+  background-image:url("img/60327118_2684548914953221_1437160675024568320_n.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+    -webkit-background-size: cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+body::before {
+  display: block;
+  content:'';
+  height:40px;
+}
+
+html {
+  font-size: 1.2rem;
+  
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius:10px ;
+
+}
+
