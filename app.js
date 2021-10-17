@@ -31,38 +31,91 @@ const profiles = profileIterator(data);
 
 nextProfile();
 
-document.getElementById('next').addEventListener('click', nextProfile);
+setInterval(function () {
+    nextProfile()
+}, 6000);
 
 function nextProfile() {
 
     const currentProfile = profiles.next().value;
 
     if (currentProfile !== undefined) {
-    
-    document.getElementById('profileDisplay').innerHTML = 
-    `<ul class="list-group">
+
+        document.getElementById('profileDisplay').innerHTML =
+            `<ul class="list-group">
     <li class="list-group-item bg-dark text-light">${currentProfile.name}</li>
     <li class="list-group-item bg-dark text-light">${currentProfile.review}</li>
     </ul>`;
 
-    document.getElementById('imageDisplay').innerHTML = `<img src="${currentProfile.image}" class="rounded-circle mb-3">`;
-    }else {
-
-        window.location.reload();
-
+        document.getElementById('imageDisplay').innerHTML = `<img src="${currentProfile.image}" class="rounded-circle mb-3">`;
     }
 
 }
 
-
 function profileIterator(profiles) {
-    
+
     let nextIndex = 0;
 
     return {
         next: function () {
-            return nextIndex < profiles.length ? { value: profiles[nextIndex++], done: false} :
-            {done: true}
+            return nextIndex < profiles.length ? { value: profiles[nextIndex++], done: false } :
+                nextIndex = 0
         }
     };
 }
+
+
+img = document.getElementsByClassName("img-gallery");
+
+for (var i = 0; i < img.length; i++) {
+
+    img[i].addEventListener('mouseenter', function () {
+
+        this.style.transform = "scale(1.75)";
+
+        this.style.transition = "transform 0.25s ease";
+
+    });
+
+    img[i].addEventListener('mouseleave', function () {
+
+
+
+
+        this.style.transform = "scale(1)";
+        this.style.transition = "transform 0.25s ease";
+
+    });
+}
+
+document.getElementById('menu').addEventListener('click', function () {
+    window.open("media/menu.pdf", '_blank');
+})
+
+
+document.getElementById('submit').addEventListener('click', function (e) {
+
+    const name = document.getElementById('name').value;
+    const people = document.getElementById('people').value;
+    const phone = document.getElementById('phone').value;
+
+    window.open("mailto:info@sushiking.com?subject=Booking%20Email&body=Name:%20" + name + "%20People:" + people + "%20Phone:" + phone);
+
+    clearFields();
+
+    e.preventDefault();
+});
+
+function clearFields() {
+
+    document.getElementById('name').value = "";
+    document.getElementById('people').value = "";
+    document.getElementById('phone').value = "";
+}
+
+
+
+
+
+
+
