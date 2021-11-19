@@ -13,6 +13,28 @@
  
 }
 
+@media (max-width: 768px) {
+  .social {
+
+    width: 50%;
+
+
+  }
+
+
+}
+
+@media (min-width: 768px) {
+  .social {
+
+    width: 25%;
+
+
+  }
+
+
+}
+
 #main{ 
   height: 90vh;
   width: 100%;
@@ -47,7 +69,7 @@ html {
   overflow: hidden;
   background: none !important;
   height: 500px;
-  width: 600px;
+  
 }
 
 hr {

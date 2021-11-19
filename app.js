@@ -71,7 +71,7 @@ for (var i = 0; i < img.length; i++) {
 
     img[i].addEventListener('mouseenter', function () {
 
-        this.style.transform = "scale(1.75)";
+        this.style.transform = "scale(1.25)";
 
         this.style.transition = "transform 0.25s ease";
 
